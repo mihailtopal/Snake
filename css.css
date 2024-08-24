@@ -1,0 +1,273 @@
+button {
+  padding: 5px;
+  margin: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-bottom: 5px;
+  border-radius: 0.3em;
+  border: none;
+  background-color: rgb(177, 176, 176);
+  color: black;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(210, 210, 210);
+}
+button:active {
+  background-color: black;
+  color: whitesmoke;
+}
+h1 {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
+  font-size: 2em;
+  position: relative;
+  left: 0px;
+}
+.pole {
+  max-height: 90%;
+  position: fixed;
+}
+.bts {
+  display: flex;
+  padding: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+.bts:focus {
+  border: none;
+}
+button.start {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+button.stop {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+}
+button.start:focus {
+  border: none;
+}
+.start {
+  background-color: #009a63;
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+.start:hover {
+  background-color: #71bc78;
+}
+.start:focus {
+  border: none;
+}
+.stop {
+  background-color: #ff6347;
+  color: whitesmoke;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  left: -70px;
+  position: relative;
+}
+body:focus {
+  border: none;
+}
+#scoreValueModal {
+  display: block;
+  height: 30px;
+  padding-left: 5px;
+}
+#bestScoreValue {
+  font-size: 30px;
+  color: black;
+  display: block;
+}
+#scoreValue {
+  font-size: 30px;
+  color: black;
+  display: block;
+}
+.scoreModal {
+  display: flex;
+  position: relative;
+  font-size: 24px;
+}
+.pole {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  left: 90px;
+}
+.score {
+  padding-left: 30px;
+  position: relative;
+  font-family: Roboto, sans-serif;
+  font-size: 24px;
+}
+.score > span {
+  margin-top: 10px;
+  margin-bottom: 10px; /* Примерный отступ между элементами */
+}
+
+.game-container {
+  position: relative;
+  border: 2px solid #333;
+  padding: 20px;
+  height: max-content;
+  width: max-content;
+  background-color: #c1c1c17c;
+  margin: 5px;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(16, 1.5vmax);
+  grid-template-rows: repeat(16, 1.5vmax);
+  gap: 0.1em;
+  height: max-content;
+  width: max-content;
+  position: relative;
+  align-content: stretch;
+  justify-items: stretch;
+}
+
+.empt.dead {
+  background-color: rgba(245, 222, 179, 0);
+  color: #333;
+}
+.cell {
+  background-color: #f0f0f0;
+}
+.cell.dead {
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.cell.body {
+  background-color: rgb(14, 14, 14);
+}
+.cell.head {
+  background-color: green;
+}
+.cell.apple {
+  background-color: red;
+  animation: blink 0.9s infinite; /* 1s - длительность анимации, infinite - бесконечное повторение */
+}
+
+@keyframes blink {
+  50% {
+    border: 1px solid #ccc;
+    background-color: #fabfbf;
+  }
+}
+.move_right {
+  animation: moveAnimationRight 0.5s ease-in-out;
+}
+.move_left {
+  animation: moveAnimationLeft 0.5s ease-in-out;
+}
+.move_top {
+  animation: moveAnimationTop 0.5s ease-in-out;
+}
+.move_bottom {
+  animation: moveAnimationBottom 0.5s ease-in-out;
+}
+
+.start {
+  display: block;
+}
+.row {
+  background-color: #f0f0f0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 50px; /* Обновленный паддинг сверху */
+}
+
+.modal-content {
+  border-radius: 2em;
+  display: flex;
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 15px;
+  border: 1px solid #888;
+  width: 70%;
+  max-width: 500px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
