@@ -271,3 +271,9 @@ body:focus {
   text-decoration: none;
   cursor: pointer;
 }
+#board {
+  height: 638px;
+  width: 638px;
+  background-color: #cccccc;
+
+}
